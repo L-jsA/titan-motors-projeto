@@ -1,0 +1,10 @@
+# Arquivo de configuração (onde está sua senha do Neon)
+.env
+
+# Pastas de ambiente virtual do Python
+venv/
+__pycache__/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,199 @@
+/* Página de Soluções */
+
+/* Título e Subtítulo */
+.mission-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Estilização Avançada do Título Principal na página de Soluções */
+.solutions-hero .hero-title {
+    font-size: 5rem; /* Aumenta um pouco o tamanho para mais impacto */
+    font-weight: 900; /* Extra bold */
+    text-transform: uppercase; /* Tudo em maiúsculo */
+    letter-spacing: -2px; /* Aproxima as letras para um visual moderno */
+    line-height: 1;
+    margin-bottom: 1rem;
+    
+    /* Efeito de Gradiente Metálico (Prata/Ciano) */
+    background: linear-gradient(
+        135deg, 
+        #ffffff 0%,   /* Branco puro */
+        #e2e8f0 40%,  /* Cinza muito claro */
+        #22d3ee 50%,  /* Ciano vibrante (toque de tecnologia) */
+        #e2e8f0 60%,  /* Cinza muito claro */
+        #ffffff 100%  /* Branco puro */
+    );
+    background-size: 200% auto; /* Necessário para a animação */
+    -webkit-background-clip: text; /* Corta o fundo no formato do texto (Webkit) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Torna a cor do texto transparente para mostrar o fundo */
+    
+    /* Brilho sutil (Glow) */
+    filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.3));
+    
+    /* Animação do Reflexo */
+    animation: shineEffect 4s linear infinite;
+    
+    position: relative;
+    display: inline-block;
+}
+
+/* Pseudo-elemento para uma linha fina de brilho extra (opcional, mas fica lindo) */
+.solutions-hero .hero-title::after {
+    content: 'ENGENHARIA DE PRECISÃO'; /* Mesmo texto */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Gradiente muito fino para simular o reflexo */
+    background: linear-gradient(
+        135deg,
+        transparent 45%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 55%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shineEffect 4s linear infinite;
+    opacity: 0.5; /* Suaviza o efeito extra */
+}
+
+/* Animação que move o gradiente de fundo */
+@keyframes shineEffect {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Ajuste Responsivo para telas menores */
+@media (max-width: 768px) {
+    .solutions-hero .hero-title {
+        font-size: 3rem; /* Diminui o tamanho em mobile */
+        letter-spacing: -1px;
+    }
+}
+
+.mission-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Pipeline Grid */
+.pipeline-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+    flex: 1;
+    position: relative;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+.step-arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+/* Tech Stack */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-item {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    border-color: var(--border);
+    background: var(--bg-card);
+    transform: scale(1.05);
+}
+
+.tech-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.tech-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+/* Link Ativo (Menu) */
+.nav a.active-page {
+    color: var(--text-main);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .pipeline-grid {
+        flex-direction: column;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+}

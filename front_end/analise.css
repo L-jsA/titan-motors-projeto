@@ -1,0 +1,212 @@
+/* analise.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap');
+
+:root {
+    --bg-main: #0b0f19;
+    --bg-card: rgba(20, 27, 45, 0.6);
+    --border-card: rgba(255, 255, 255, 0.05);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-neon: #00E5FF;
+    /* Ciano Neon */
+    --accent-green: #05FFA1;
+    /* Verde Neon */
+    --accent-blue: #0055ff;
+    --glow-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.analise-body {
+    background-color: #0f172a;
+    /* Cor base profunda */
+    /* Camadas de gradiente para criar profundidade sem poluir o visual */
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(0, 85, 255, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.8) 100%);
+
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+/* Sugestão para o Título da Página (onde o conteúdo principal começa) */
+.titulo-analise {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.titulo-analise h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin: 0;
+    /* Efeito de degradê que você já usa no dashboard */
+    background: linear-gradient(90deg, #00d4ff, #0055ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
+}
+
+.titulo-analise::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #00d4ff;
+    margin: 15px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.analise-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analise-container:hover {
+    box-shadow: 0 30px 60px -15px rgba(0, 229, 255, 0.1);
+}
+
+.header-analise {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.header-analise h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+}
+
+.header-analise p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.grafico-estatico-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho na borda superior do card */
+.grafico-estatico-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-neon), transparent);
+    opacity: 0.5;
+}
+
+.grafico-estatico-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.grafico-estatico-card img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.15);
+    border-color: rgba(0, 229, 255, 0.3);
+}
+
+.btn-atualizar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: rgba(5, 255, 161, 0.05);
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-atualizar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--accent-green);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-atualizar:hover::before {
+    width: 100%;
+}
+
+.btn-atualizar:hover {
+    color: #000;
+    box-shadow: 0 0 25px rgba(5, 255, 161, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-atualizar:active {
+    transform: translateY(1px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .analise-container {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .header-analise h2 {
+        font-size: 2rem;
+    }
+
+    .grafico-estatico-card {
+        padding: 15px;
+    }
+}

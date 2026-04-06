@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>TitanMotors - Painel de Saúde</title>
+    <link rel="icon" type="image/png" href="../imagens_projeto/Braço robótico com iniciais _TM_.png">
+    <link rel="stylesheet" href="dashboard2.css"> <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <h1>Monitoramento TitanMotors</h1>
+        <a href="titanmotors.html" class="btn-voltar">← Voltar para Home</a>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="status-grid">
+            <div class="card" id="card-rpm">
+                <h4>Rotação Atual</h4>
+                <h2 id="rpm-val">0</h2> <small>RPM</small>
+            </div>
+            
+            <div class="card" id="card-saude">
+                <h4>Saúde do Sistema</h4>
+                <h2 id="health-val">0%</h2>
+                <div id="status-text">Operação Normal</div>
+            </div>
+        </div>
+
+        <div class="financeiro-grid">
+            <div class="card">
+                <h4 class="custo-prejuizo">Prejuízo s/ Preditiva</h4>
+                <p>Estimativa de perda: <strong>R$ 0,00</strong></p>
+            </div>
+            <div class="card">
+                <h4 class="custo-ganho">Economia Gerada</h4>
+                <p>Retorno sobre investimento: <strong>R$ 0,00</strong></p>
+            </div>
+        </div>
+
+        <div class="chart-section" style="height: 40vh; width: 85vw; margin: 20px auto;">
+            <canvas id="vibrationChart"></canvas>
+        </div>
+
+        <section class="log-container">
+            <h3>📋 Histórico de Eventos Críticos</h3>
+            <div id="event-log" class="event-log">
+                <p class="log-empty">Monitoramento ativo: nenhum incidente registrado.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script_titan/script.js"></script>
+</body>
+</html>

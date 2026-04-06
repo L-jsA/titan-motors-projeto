@@ -1,0 +1,194 @@
+/* Estilos para a página Sobre */
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilização Extra do Título "Nossa Missão" */
+.mission-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.mission-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.mission-title {
+    font-size: 4.5rem; /* Um pouco maior para destaque */
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, var(--accent), #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* Pequeno detalhe animado na linha */
+.title-underline::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    animation: moveLine 2s infinite linear;
+    box-shadow: 0 0 10px #fff;
+}
+
+@keyframes moveLine {
+    0% { left: 0; }
+    100% { left: 100%; }
+}
+
+/* Melhoria no parágrafo para legibilidade */
+.about-content .column-desc {
+    max-width: 850px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.about-content strong {
+    color: var(--text-main);
+    border-bottom: 1px solid var(--accent);
+}
+
+/* Grid de Equipe */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Card do Membro */
+.team-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+/* Foto do Membro */
+.member-photo {
+    width: 100%;
+    aspect-ratio: 1/1; /* Garante que a foto seja quadrada */
+    background-color: var(--bg-darker);
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a foto sem distorcer */
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.team-card:hover .member-photo img {
+    filter: grayscale(0%);
+}
+
+/* Informações do Membro */
+.member-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.member-role {
+    display: block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* --- ADICIONE ESTE BLOCO ABAIXO DE .member-bio --- */
+
+/* Container dos ícones sociais */
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border); /* Linha sutil para separar da bio */
+}
+
+.member-socials a {
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition);
+}
+
+.member-socials img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity var(--transition), filter var(--transition);
+}
+
+/* Efeito de hover nos ícones */
+.member-socials a:hover {
+    transform: translateY(-3px);
+}
+
+.member-socials a:hover img {
+    opacity: 1;
+}
+
+/* Ajuste específico para o ícone do GitHub aparecer no tema escuro */
+.member-socials .github-icon {
+    filter: invert(1) brightness(0.8);
+}
+
+.member-socials a:hover .github-icon {
+    filter: invert(1) brightness(1);
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}

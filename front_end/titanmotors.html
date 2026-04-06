@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Motors</title>
+    <link rel="icon" type="image/png" href="../imagens_projeto/Braço robótico com iniciais _TM_.png">
+    <link rel="stylesheet" href="titanmotors2.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#">
+                    <img class="logo" src="../imagens_projeto/lz13mc5khimecxw-removebg-preview.png" alt="logo da Apresentação T.M">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="solucoes.html">Soluções</a>
+                <a href="analise_estatistica.html">Dashboards</a>
+                <a href="sobre.html" id="link-sobre">Sobre nós</a>
+                <!--<a href="#" class="btn-outline">Contatos</a>-->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="hero-title">Titan Motors: automação que impulsiona</h1>
+                <p class="hero-subtitle">Tecnologia avançada que transforma ideias em movimento.</p>
+                <a href="dashboard.html" class="btn-primary">Explorar Mais</a>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="cards-section section">
+            <div class="container">
+                <h2 class="section-title">Nossas Soluções</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="../imagens_projeto/gear_8679936.png" alt="Ícone de Automação">
+                        </div>
+                        <h3 class="card-title">Automação Industrial</h3>
+                        <p class="card-text">Otimizamos processos com tecnologia inteligente.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="../imagens_projeto/thief_10980045.png" alt="Ícone de robô">
+                        </div>
+                        <h3 class="card-title">Robótica Avançada</h3>
+                        <p class="card-text">Desenvolvemos sistemas robóticos de alta precisão.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="../imagens_projeto/data_1849450.png" alt="Ícone de Tech">
+                        </div>
+                        <h3 class="card-title">Soluções Tecnológicas</h3>
+                        <p class="card-text">Integração de sistemas para máxima eficiência.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="../imagens_projeto/repair_6945772.png" alt="Ícone de manunteção">
+                        </div>
+                        <h3 class="card-title">Manutenção e Suporte Técnico</h3>
+                        <p class="card-text">Garantimos o funcionamento contínuo com suporte especializado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Column Section -->
+        <section class="two-column-section section dark-bg">
+            <div class="container two-column-grid">
+                <div class="column-text">
+                    <h2 class="section-title">Por que escolher a Titan Motors?</h2>
+                    <p class="column-desc">Escolher a Titan Motors é investir em tecnologia de ponta e desempenho. 
+                        Desenvolvemos soluções inteligentes que transformam ideias em resultados concretos.</p>
+                    <a href="#" class="btn-outline" onclick="event.preventDefault(); destacarSobre()">Saiba mais</a>
+                </div>
+                <div class="column-visual">
+                    <div class="placeholder-image">
+                        <img src="../imagens_projeto/Gemini_Generated_Image.png" alt="Tecnologia Titan Motors" class="imagem-destaque">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Numbers / Dashboard Style Section -->
+        <section class="stats-section section">
+            <div class="container">
+                <h2 class="section-title">Nossos indicadores</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">22%</div>
+                        <div class="stat-label">Economia em custos operacionais</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">Uptime dos sistemas robóticos</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Redução em paradas não planejadas</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">2.8k</div>
+                        <div class="stat-label">Métricas analisadas diariamente</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <!---<div class="footer-logo">[Logo]</div>
+            <div class="footer-links">
+                <a href="#">[Footer Link 1]</a>
+                <a href="#">[Footer Link 2]</a>
+                <a href="#">[Footer Link 3]</a>
+            </div>--->
+            <div class="footer-copy">&copy; 2026 Titan Motors. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+
+<script>
+function destacarSobre() {
+    const link = document.getElementById("link-sobre");
+
+    link.classList.add("highlight");
+
+    setTimeout(() => {
+        link.classList.remove("highlight");
+    }, 2000); // remove depois de 2 segundos
+}
+</script>
+
+</html>
