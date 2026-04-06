@@ -3,7 +3,7 @@ let chartInstance = null;
 
 async function atualizarInterface() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/dados");
+        const response = await fetch("https://titan-motors-projeto.onrender.com");
         const data = await response.json();
 
         console.log("Dados recebidos da API:", data); // <-- ADICIONE ISSO AQUI
