@@ -24,17 +24,17 @@ if not DATABASE_URL:
 # 3. Configuração da Conexão (Versão Anti-Oscilação de Rede)
 engine = create_engine(
     DATABASE_URL,
-    pool_pre_ping=True,
+    pool_pre_ping=True,      # Testa a conexão ANTES de enviar o dado (Vital para o Pooler)
+    pool_recycle=30,         # Reinicia a conexão a cada 30 segundos (Não deixa o Pooler derrubar)
     connect_args={
         "sslmode": "require",
         "connect_timeout": 60,
         "keepalives": 1,
-        "keepalives_idle": 30,
-        "keepalives_interval": 10,
+        "keepalives_idle": 5,   # Envia um "oi" pro servidor a cada 5 segundos
+        "keepalives_interval": 5,
         "keepalives_count": 5
     }
 )
-
 # 4. Carga Inicial
 df = pd.read_csv(caminho_csv)
 print(f"✅ CSV carregado com sucesso de: {caminho_csv}")
