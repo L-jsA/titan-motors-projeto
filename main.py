@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # Carrega as configurações do arquivo .env que está na pasta de cima
 base_path = os.path.dirname(__file__)
-dotenv_path = os.path.join(base_path, '..', '.env')
+dotenv_path = os.path.join(base_path, '.env')
 load_dotenv(dotenv_path)
 
 app = FastAPI()
@@ -25,7 +25,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 # Ajuste de caminho para o CSV (caso ainda queira usar como fallback)
-caminho_csv = os.path.join(base_path, '..', 'dataset_tratado.csv')
+caminho_csv = os.path.join(base_path, 'dataset_tratado.csv')
 
 @app.get("/dados")
 def get_dados():
@@ -41,3 +41,8 @@ def get_dados():
 @app.get("/status")
 def get_status():
     return {"status": "Online", "database": "Conectado ao Neon"}
+    
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
